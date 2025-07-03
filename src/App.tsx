@@ -7,14 +7,11 @@ function App() {
 
   return (
     <>
-      <h1>Vite + React</h1>
+      <h1>Github Actions</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => setCount((count) => count + 10)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
       <p className="read-the-docs">Update code 👽</p>
     </>
