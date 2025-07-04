@@ -9,11 +9,11 @@ function App() {
     <>
       <h1>Github Actions</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 10)}>
+        <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
       </div>
-      <p className="read-the-docs">Update code 👽</p>
+      <p className="read-the-docs">Update code 🔆</p>
     </>
   );
 }
