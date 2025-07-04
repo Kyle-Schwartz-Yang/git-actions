@@ -2,8 +2,8 @@ name: Deploy to GitHub Pages 🚀
 
 on:
   push:
-    branches:
-      - main # Або master, залежно від твоєї гілки
+    branches: ["main"]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -11,12 +11,7 @@ jobs:
 
     steps:
       - name: 🧾 Checkout repo
-        uses: actions/checkout@v3
-
-      - name: 🟢 Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+        uses: actions/checkout@v4.2.2
 
       - name: 🧹 Clean dist folder
         run: rm -rf dist
@@ -28,7 +23,8 @@ jobs:
         run: npm run build
 
       - name: 🚀 Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          folder: dist # The folder the action should deploy.
+
+
