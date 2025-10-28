@@ -1,8 +1,19 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+// import tsconfigPaths from "vite-tsconfig-paths";
 
-// https://vite.dev/config/
 export default defineConfig({
   base: "/git-actions/",
   plugins: [react()],
+  resolve: {
+    alias: {
+      "@components": "/src/components",
+      "@app": "/src/components/app",
+      "@pages": "/src/components/pages",
+      "@widgets": "/src/components/widgets",
+      "@features": "/src/components/features",
+      "@entities": "/src/components/entities",
+      "@shared": "/src/components/shared",
+    },
+  },
 });
